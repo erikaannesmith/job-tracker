@@ -13,3 +13,4 @@ City: <%= @job.city %>
 Company: <%= link_to @job.company.name, company_path(@job.company) %>
 
 <p><%= link_to "Delete Job", company_job_path(@job.company, @job), method: :delete, data: {confirm: "Really delete the article?"} %></p>
+<p><%= link_to "Edit Job", edit_company_job_path(@job.company, @job) %></p>
