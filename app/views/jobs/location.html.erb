@@ -1,0 +1,26 @@
+<h1>sorted by location</h1>
+
+<table>
+  <tr>
+    <th>City</th>
+    <th>Title</th>
+    <th>Company</th>
+    <th>Description</th>
+  </tr>
+  <% @jobs.each do |job| %>
+    <tr>
+      <td>
+        <%= job.city %>
+      </td>
+      <td>
+        <%= job.title %>
+      </td>
+      <td>
+        <%= job.company.name %>
+      </td>
+      <td>
+        <%= job.description %>
+      </td>
+    </tr>
+  <% end %>
+</table>

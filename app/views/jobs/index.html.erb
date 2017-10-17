@@ -1,6 +1,9 @@
 All Jobs for <strong><%= @company.name %></strong>
-
+byebug
 <% @jobs.each do |job| %>
   <ul><%= link_to job.title, company_job_path(@company,job) %>: <%= job.description %></ul>
 <% end %>
 <p><%= link_to "New Job", new_company_job_path(@company) %>
+
+<%= render partial: "contacts/form" %>
+<%= render partial: "jobs/contact", collection: @company.contacts.reverse %>

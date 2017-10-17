@@ -1,0 +1,10 @@
+<div>
+  <strong>Comment by <%= comment.author_name %></strong>: <%= comment.body %>
+  <ul>
+    <li>
+      <p>
+        Posted <%= distance_of_time_in_words(Time.now, comment.created_at) %> ago
+      </p>
+    </li>
+    <ul>
+</div>
