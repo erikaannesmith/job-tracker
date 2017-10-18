@@ -1,0 +1,6 @@
+<h1>All Jobs in <%= params[:location].capitalize %><h1>
+<ul>
+<% @jobs.each do |job| %>
+  <li><%= job.title %>: <%= job.description%></li>
+  <% end %>
+</ul>

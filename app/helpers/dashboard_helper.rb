@@ -13,5 +13,10 @@ module DashboardHelper
     jobs.map { |city,job| [city,job.count] }
   end
 
+  def top_companies_by_interest
+    jobs = Job.group(:company_id).average(:level_of_interest)
+    jobs.sort_by {|k,v| v }.reverse.shift(3)
+  end
+
 
 end

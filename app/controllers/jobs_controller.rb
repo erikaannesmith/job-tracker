@@ -8,7 +8,8 @@ class JobsController < ApplicationController
       @jobs = Job.order(:city)
       render :location
     when params[:location]
-      @jobs = Job.where(city: params[:location])
+      @jobs = Job.where(city: params[:location].capitalize)
+      render :locationparams
     else
       @company = Company.find(params[:company_id])
       @jobs = @company.jobs
