@@ -4,10 +4,12 @@ class JobsController < ApplicationController
     when params[:sort] == 'interest'
       @jobs = Job.order(:level_of_interest)
       render :interest
-      when params[:sort] == 'location'
+    when params[:sort] == 'location'
       @jobs = Job.order(:city)
       render :location
-      else
+    when params[:location]
+      @jobs = Job.where(city: params[:location])
+    else
       @company = Company.find(params[:company_id])
       @jobs = @company.jobs
       @contact = Contact.new

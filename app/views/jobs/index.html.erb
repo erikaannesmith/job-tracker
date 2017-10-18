@@ -1,5 +1,5 @@
 All Jobs for <strong><%= @company.name %></strong>
-byebug
+
 <% @jobs.each do |job| %>
   <ul><%= link_to job.title, company_job_path(@company,job) %>: <%= job.description %></ul>
 <% end %>

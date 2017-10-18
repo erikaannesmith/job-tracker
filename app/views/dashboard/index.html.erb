@@ -1,0 +1,13 @@
+Count of Jobs by Level of Interest
+<ul>
+<% interest_range_count.map do |pair| %>
+  <li><%= pair[0][0].to_s.gsub("..","-") %>: <%= pair[1] %></li>
+<% end %>
+</ul>
+
+Count of Jobs by Location
+<ul>
+<% location_count.map do |pair| %>
+  <li><%= pair[0] %>: <%= pair[1] %></li>
+  <% end %>
+</ul>
