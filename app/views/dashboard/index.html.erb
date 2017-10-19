@@ -1,20 +1,32 @@
-Count of Jobs by Level of Interest
-<ul>
-<% interest_range_count.map do |pair| %>
-  <li><%= pair[0][0].to_s.gsub("..","-") %>: <%= pair[1] %></li>
-<% end %>
-</ul>
+<body>
+    <h1 class="header">Dashboard</h1>
 
-Count of Jobs by Location
-<ul>
-<% location_count.map do |pair| %>
-  <li><%= link_to pair[0], "/jobs?location=#{pair[0]}" %>: <%= pair[1] %></li>
-  <% end %>
-</ul>
+    <div class="whole">
+      <div class="part">
+          Count of Jobs by Level of Interest
+        <ul>
+        <% interest_range_count.map do |pair| %>
+          <li><%= pair[0][0].to_s.gsub("..","-") %>: <%= pair[1] %></li>
+        <% end %>
+        </ul>
+      </div>
 
-Top Three Companies by Average Level of Interest
-<ul>
-<% top_companies_by_interest.map do |pair| %>
-  <li><%= Company.find(pair[0]).name %></li>
-<% end %>
-</ul>
+      <div class="part">
+        Count of Jobs by Location
+        <ul>
+        <% location_count.map do |pair| %>
+          <li><%= link_to pair[0], "/jobs?location=#{pair[0]}" %>: <%= pair[1] %></li>
+          <% end %>
+        </ul>
+      </div>
+
+      <div class="part">
+        Top Companies by Level of Interest
+        <ul>
+        <% top_companies_by_interest.map do |pair| %>
+          <li><%= Company.find(pair[0]).name %></li>
+        <% end %>
+        </ul>
+      </div>
+    <div>
+    </body>

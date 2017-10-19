@@ -7,6 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <nav>
+    <%= link_to "Dashboard", dashboard_index_path %>
+    <%= link_to "All Companies", companies_path %>
+    <%= link_to "Jobs by Interest", "/jobs?sort=interest" %>
+    <%= link_to "Jobs by Location", "/jobs?sort=location" %>
+  </nav>
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: name %>
   <% end %>

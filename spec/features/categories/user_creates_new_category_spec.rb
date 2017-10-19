@@ -31,6 +31,6 @@ describe "User creates a new category" do
     click_button "Create Category"
 
     expect(page).to have_content("123 is already a category!")
-    expect(page).to have_content("This is the NEW page")
+    expect(page).to have_content("New Category")
   end
 end
